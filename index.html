@@ -19,7 +19,11 @@ cat > /home//mj5/index.html << 'HTMLEOF'
   --ta:#4499ff;--tb:#ff5533;
 }
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
-html,body{height:100%;overflow:hidden}
+html, body {
+  height: 100%;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch;
+}
 body{font-family:'Segoe UI',Arial,sans-serif;background:var(--db);color:#fff;font-size:14px}
 
 /* ── SCREENS ── */
@@ -611,6 +615,7 @@ let inVoice=false;
 let visHidden=false;
 
 const socket=io({reconnection:true,reconnectionDelay:1000,reconnectionAttempts:10});
+
 
 // ════════════════════════════════════════
 //  UTILS
